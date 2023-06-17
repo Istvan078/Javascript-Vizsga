@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Elméleti Vizsga</title>
+</head>
+<body>
+    <section>
+        <h2>Mikor használandó a JS egy weboldal felépítése során, hogyan használható?</h2>
+        <p>
+            A javascript akkor használandó egy weboldal felépítése során, ha az oldalunkat nem statikusra,
+            hanem dinamikusra szeretnénk készíteni. Ez azt jelenti, hogy pl. különböző funkciókat hozhatunk létre,
+            amik befolyásolnak a DOM-ban különböző html elemeket, eseményeket hozhatunk létre és adhatunk hozzájuk
+            különböző függvényeket, amik befolyásolják a html elemeket és DOM manipuláció keletkezik.
+        </p>
+        <h2>Sorold fel, hogyan határozhatunk meg egy értéket és röviden definiáld őket.
+        </h2>
+        <p>
+            Értékeket meghatározni változókban lehet, ezt deklarálásnak is nevezik. Vannak globális és lokális változik.
+            A var kulcsó pl. globális változót deklarál. A let lokálisat. Értéket lehet adni a deklarált változóknak.
+            Pl. let ertek = 2, ebben az esetben a 2 az érték. Az érték lehet string, integer, float, boalean és más különböző
+            típusú értékek. Objektum property-jének is van értéke, illetve tömbben lévő elemek is értékek.
+        </p>
+        <h2>Ismertesd a literálókat.
+        </h2>
+        <p>A literálokat arra használjuk a JavaScriptben, hogy fix értékeket fejezzünk ki. Típusai:
+            Integer, floating point, boolean, string, array, object
+        </p>
+        <h2>Hogyan deklarálhatunk egy változót, és hogyan alkalmazhatóak?
+        </h2>
+        <p>Keyword-okkel, var-al, let-el, vagy const-al. A var globális szintű változót deklarál, amihez block szinten
+            is hozzá lehet férni és kívül is. A let lokális változót deklarál, helyi szintűt. A const kizárólag
+            block szintű változót deklarál és kötelező neki értéket adni deklarálásnál, míg a var-al és a lettel
+            deklarált változónak nem kötelező.
+        </p>
+        <h2>Mikor kell elágazásokat használni? Ismertesd őket (2-3 mondatban).
+        </h2>
+        <p>
+            Akkor, hogyha azt szeretnénk, hogy a programunk végrehajtson meghatározott utasításokat, ami megfelel
+            bizonyos feltételeknek és csak abban az esetben ha megfelel. Az elágazás sok ágú is lehet, pl. az if 
+            elágazástípusnál nagyon sok ágat létrelehet hozni, a JS addig megy a különböző ágakon végig, amíg bele
+            nem fut egy true ágba, akkor leáll és végrehajtja a true ág utasításait. Van switch típusú elágazás is.
+            Ha nem kell túl sok feltételnek megfelelni akkor lehet switch elágazást használni.
+        </p>
+        <h2>Mik azok az Objectek? Írj egy példát is.
+        </h2>
+        <p>Az objectek objektumok magyarul. Olyan literáló, amiben kulcs-érték párok vannak property-value formájában.
+            Az objectek elraktározzák magukban a beléjük meghatározott kulcs érték párokat és az adott object kulcsára
+            hivatkozva le lehet kérni a kulcs értékét. Pl: létrehozása: üres object: const object_1 = {};
+            property és érték hozzáadása az üres object-hez: object_1.color = "black"; 
+        </p>
+        <h2>Helyes e a következő példa, ha nem miért nem?!pl: let x :  [ { x= fname: “John”, lname: “Doe, age: “34”},[1,2,3,4, “yes”, “no”] ];
+        </h2>
+        <p>Nem helyes, mert a let x után nem lehet :, csakis =, mert így tudjuk meghatározni az x változó értékét helyesen.
+            Az x=fname része sem helyet, mert property:value formában lehet object-hez helyes kulcs értéket adni 
+        </p>
+        <h2>Mik azok az Array-ek? Írj egy példát is.
+        </h2>
+        <p>Az array jelentése tömb. A tömb egy olyan literáló, amiben értékeket lehet tárolni és indexelés alapján
+            hozzá lehet férni az adott indexszámú értékhez. Pl.: const array_1 = ["cseresznye", "alma"]. Ebben a példában
+            a cseresznye a tömb 0. indexe, az alma pedig az 1. hozzáférés példa: array_1[0] Tömbben lehet tömböket is
+            tárolni, vagy akár objecteket.
+        </p>
+        <h2>Hogyan vizsgálható egy tömb? 2-3 példát írj kérlek.
+        </h2>
+        <p>Tömbök vizsgálatához különböző metódusokat és propertyket lehet alkalmazni. Pl.: a .length property:
+            array_1.length, ez a tömb értékeinek számát adja vissza szám formában. for ciklussal a length property
+            használatával végig is lehet iterálni a tömb elemein és pl. kiiratni őket a DOM-ban. for...of loop-ot is
+            lehet erre a célra használni. A push metódussal elemeket tudunk hozzáadni a tömbhöz. A .pop metódus kitörli
+            a tömb utolsó elemét. pl: array_1.pop();
+        </p>
+        <h2>Hogyan mehetünk végig egy tömb/object/lista hosszán? (2-3 mondatban)
+        </h2>
+        <p>Tömb-nél például a length property visszaadja a hosszát. Loop-okal lehet hosszukon végigmenni általánosságban.
+            for...of loop-al a tömb elemein, for...in loop-al pedig az object elemein lehet keresztül iterálni.
+        </p>
+        <h2>Sorolj fel néhány events metódus.
+        </h2>
+        <p>Esemény metódus pl. a .addEventListener(), ami eseményfigyelőt rak egy adott elemre, pl. gombra, vagy
+            h2 tagre, vagy div-re. Az első argumentuma az esemény típusa, tehát milyen eseményt figyeljen, a 2.
+            argumentum pedig hogy milyen függvényt futtasson le az esemény bekövetkezésekor. onclick() esemény:
+            kattinrásra mi történjen. onmouseover() - ha ráviszed az elemre az egeret. onscroll() - lefele görgetésnél
+            mi történjen.
+        </p>
+        <h2>Miért érdemes függvényeket használni?
+        </h2>
+        <p>Azért, mert események bekövetkezésekor le lehet őket futtatni, pl. onclick eseménynél és hatására megjeleníthetünk
+            pl. egy fontos adatot, ami előtte még nem volt ott, csak kattintás után. Függvényekkel nagyban tudjuk manipulálni
+            a DOM-ot és a függvények maguktól nem futnak be az oldal betöltődésekor, mindig valahova meg kell hívni őket.
+            Persze vannak önmagukat meghívó függvénytípusok is.
+        </p>
+        <h2>Hogyan paraméterezhetünk fel egy függvényt?
+        </h2>
+        <p>A függvény neve után levő zárójelbe kell írni a függvény paramétereit vesszővel elválasztva egymástól.
+            pl.: function my_function(a,b){a+b}. Ez a függvény a neki átadott paramétereket össze fogja adni.
+        </p>
+        <h2>Mi az a function visszatérési érték?
+        </h2>
+        <p>Az az érték, amit visszaad a funkció, miután elvégezte a benne levő műveleteket és a függvényen belül a return 
+            kulcsszó után írt adatot fogja visszaadni, mint visszatérési értéket a függvény.
+        </p>
+        <h2>Mikor futtatható egy függvény?
+        </h2>
+        <p>Akkor, hogyha megvan hívva valahol. Van self-invoking function is, ez a típus önmagát hívja meg.
+            Példa: (function(a,b){a+b})(). A példa végén levő dupla zárójellel hívja meg önmagát. Például lefuthat
+            egy függvény akár esemény hatására is, pl. onclick esemény hatására, vagy akár egy eseményfigyelőben.
+            De a javascript-ben is meg lehet hívni. pl: my_function(). a példa végén levő kettős zárójel hívja meg.
+        </p>
+        <h2>Mi az a DOM?
+        </h2>
+        <p>A DOM jelentése: Document Object Modell. A DOM maga a html szerkezete miután a html betöltődött. Ekkor
+            alakul ki a DOM. Minden html elemet tartalmaz. Ezeket manipulálja majd a JavaScript különböző műveletekkel.
+            Először a html töltődik be, majd a css, végül a js.
+        </p>
+        <h2>Mire utasít a következő példa: document.getElementByClassName(“example”).innerText
+        </h2>
+        <p>Arra, hogy az example osztály nevű elemeknek szerezze meg a belső szöveges tartalmát. egy
+            HTMLCollection objektumot hoz létre, ami egy dinamikus objektum </p>
+        <h2>Hogyan nyerhető ki egy form input mező értéke és hogyan jeleníted azt meg HTML-ben?
+        </h2>
+        <p>Az input mezőknek adunk Id-t és az id-juk alapján megfogjuk őket a document.getElementById() metódussal.
+            Elmentjük őket egy változóba, majd a .value tulajdonságukon keresztül megjelenítjük a HTML-ben az értékét pl 
+            egy üres dobozban, vagy p tagben. pl: var input_mezo = document.getElementById("inp_mezo");
+            document.getElementById("divid").innerHTML = input_mezo.value
+        </p>
+        <h2>Mi az a callback function?
+        </h2>
+        <p>Visszahívó függvényt jelent. Egy olyan függvény, amiről még nem tudjuk pontosan hogy milyen adatot fog
+            kapni, csak azt hogy fog adatot kapni. Ezért pl. érték nélkül hozzuk létre, paramétereket adunk meg neki,
+            amiket pontosan később fog megkapni máshonnan pl. egy másik függvényből és így visszahívódik.
+        </p>
+        <h2>Definiált: Date();
+        </h2>
+        <p>Ez a dátum metódus. Létrelehet vele hozni dátumot. Pl.:így let date_0= new Date; Ez a pontos dátumot és
+            időt fogja megjeleníteni, viszont testre lehet szabni különböző metódusokkal, hogy pl. csak az órát, percet és
+            másodpercet mutassa. get hours(), get minutes(),get seconds() metódussal.
+        </p>
+        <h2>Definiáld: onclick();
+        </h2>
+        <p>Az onclick egy esemény, ami kattintásra hajt végre műveleteket. pl. kattintásra lefuttat egy funkciót.</p>
+        <h2>Definiáld: function Click(){…};
+        </h2>
+        <p>Ez egy Click nevű függvény, ami létre van hozva helyesen, viszont nincs meghívva és paraméter és műveleti parancs
+            sincs megadva neki, ezért meghívásnál sem csinálna semmit.
+        </p>
+    </section>
+</body>
+</html>
